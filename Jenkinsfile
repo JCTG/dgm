@@ -7,7 +7,7 @@ node {
 	stage 'Compilar'
 
   	echo 'Ejecutando compilacion'
-	docker build -t jctg/dgm:$GIT_COMMIT .
+	docker build -t jctg/dgm:latest .
 	docker login --username=jctg --email=juan.tovar@vun.mx
 
 	//------------------------------------------------------------
@@ -21,7 +21,7 @@ node {
 	//------------------------------------------------------------
 	stage 'cargar imagen creada'
 	echo ' hacer push en repositorio GIT'
-	docker push jctg/dgm:$GIT_COMMIT
+	docker push jctg/dgm:latest
 	
 	//------------------------------------------------------------
 	// -- ETAPA: Envio de mensaje a los involucrados
