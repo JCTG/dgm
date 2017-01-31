@@ -8,7 +8,7 @@ node {
 
   	echo 'Ejecutando compilacion'
 	docker build -t jctg/dgm:latest .
-	docker login --username=jctg --email=juan.tovar@vun.mx
+	docker login --username=jctg1 --email=juan.tovar@vun.mx
 
 	//------------------------------------------------------------
 	// -- ETAPA: Test
@@ -20,7 +20,7 @@ node {
 	// -- ETAPA: subir imagen
 	//------------------------------------------------------------
 	stage 'cargar imagen creada'
-	echo ' hacer push en repositorio GIT'
+	echo ' hacer push en repositorio docker'
 	docker push jctg/dgm:latest
 	
 	//------------------------------------------------------------
