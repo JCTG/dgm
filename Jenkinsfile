@@ -5,10 +5,10 @@ node {
 	// Etapa - Compilar
 	//------------------------------------------------------------
 	stage 'Compilar'
-
   	echo 'Ejecutando compilacion'
 	docker build -t jctg1/dgm:latest .
 	docker login --username=jctg1 --password=abcd1234
+  	echo 'Fin de etapa compilacion'
 
 	//------------------------------------------------------------
 	// -- ETAPA: Test
