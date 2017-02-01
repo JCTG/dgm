@@ -5,7 +5,6 @@ node {
 	// Etapa - Compilar
 	//------------------------------------------------------------
 	stage 'Compilar'
-
   	echo 'Ejecutando compilacion'
 	docker build -t jctg1/dgm:latest .
 	docker login --username=jctg1 --email=juan.tovar@vun.mx
