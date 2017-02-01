@@ -8,7 +8,7 @@ node {
 
   	echo 'Ejecutando compilacion'
 	docker build -t jctg1/dgm:latest .
-	docker login --username=jctg1 --email=juan.tovar@vun.mx
+	docker login --username=jctg1 --password=abcd1234
 
 	//------------------------------------------------------------
 	// -- ETAPA: Test
