@@ -8,6 +8,7 @@ node {
 		//------------------------------------------------------------
 		stage 'Compilar'
 	  	echo 'Ejecutando compilacion'
+		docker images
 		docker build -t jctg1/dgm:latest .
 		docker login --username=jctg1 --email=juan.tovar@vun.mx --password=abcd1234
 	  	echo 'Fin de etapa compilacion'
