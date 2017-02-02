@@ -2,13 +2,6 @@
 
 node {
 
-	 try {
-	  	
-		docker images
-		
-	 } catch (err) {
-
-	   throw err
-         }
+	docker images
 
       }
