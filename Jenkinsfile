@@ -23,6 +23,7 @@ pipeline {
                 echo 'Deploying....'
 		sh'docker push jctg1/dgm:latest'
 
+
             }
         }
     }
