@@ -7,8 +7,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh 'docker build -t jctg1/dgm:$GIT_COMMIT .'
+
+	        sh """
+					docker login -e="${juan.tovar@vun.mx}" -u="${jctg1}" -p="\${abcd1234}" quay.io
+					docker build -t ${jctg1/dgm} .
+					docker push ${jctg1/dgm}
+				"""
+      
             }
+
         }
         stage('Test'){
             steps {
