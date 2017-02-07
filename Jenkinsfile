@@ -7,8 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-	        sh 'docker login -u="${jctg1}" -p="${abcd1234}" docker build -t ${jctg1/dgm} . docker push ${jctg1/dgm}'
-      
+	        sh 'docker login -u="${jctg1}" -p="${abcd1234}" docker build -t ${jctg1/dgm} .'
             }
 
         }
@@ -20,6 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+		
             }
         }
     }
