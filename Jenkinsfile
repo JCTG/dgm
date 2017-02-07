@@ -1,8 +1,23 @@
 #!groovy
 
-	docker build -t jctg1/dgm:$GIT_COMMIT .
-	docker login -u="jctg1" -p="abcd1234"
-	docker push     jctg1/dgm:$GIT_COMMIT
+pipeline {
+    agent any
 
-
-
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test'){
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}	
