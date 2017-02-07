@@ -7,7 +7,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh'docker  build -t jctg1/dgm:latest .'
+		sh'docker  build -t jctg1/dgm:COMMIT_HASH .'
+
 
             } 
 
@@ -19,8 +20,8 @@ pipeline {
         }
         stage('push') {
             steps {
-                echo 'Deploying....'
-		sh'docker push jctg1/dgm:latest'
+                echo 'push....'
+		sh'docker push jctg1/dgm:COMMIT_HASH'
 
             }
         }
