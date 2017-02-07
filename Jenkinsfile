@@ -7,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+		docker build -t jctg1/dgm:$GIT_COMMIT .
             }
         }
         stage('Test'){
