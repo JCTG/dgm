@@ -7,10 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh'docker  build -t jctg1/dgm .'
-		sh'docker  build -t --build-arg GIT_COMMIT="$GIT_COMMIT'
-
-
+		sh'docker  build -t jctg1/dgm . --build-arg GIT_COMMIT="$GIT_COMMIT"'
             } 
 	
         }
