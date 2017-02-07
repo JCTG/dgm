@@ -8,11 +8,12 @@ pipeline {
             steps {
                 echo 'Building..'
 
-	        sh """
+	        sh "
+
 					docker login -e="${juan.tovar@vun.mx}" -u="${jctg1}" -p="\${abcd1234}" quay.io
 					docker build -t ${jctg1/dgm} .
 					docker push ${jctg1/dgm}
-				"""
+		   "
       
             }
 
