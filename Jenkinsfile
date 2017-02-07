@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Building..'
 
-	        sh 'docker login -e="${juan.tovar@vun.mx}" -u="${jctg1}" -p="${abcd1234}"
+	        sh 'docker login -e='juan.tovar@vun.mx' -u="${jctg1}" -p="${abcd1234}"
 					docker build -t ${jctg1/dgm} .
 					docker push ${jctg1/dgm}'
       
