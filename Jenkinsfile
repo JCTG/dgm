@@ -7,7 +7,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh 'docker login -u="jctg1" -p="abcd1234"'
 		sh'docker  build -t jctg1/dgm:latest .'
 
             } 
@@ -22,7 +21,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		sh'docker push jctg1/dgm:latest'
-
 
             }
         }
