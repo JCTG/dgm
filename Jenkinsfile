@@ -18,9 +18,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('push') {
             steps {
                 echo 'Deploying....'
+		sh'docker push jctg1/dgm:latest'
+
             }
         }
     }
