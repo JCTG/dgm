@@ -3,11 +3,14 @@
 pipeline {
     agent any
 
+   def git_hash = sh 'git rev-parse HEAD'
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh'docker  build -t jctg1/dgm . --build-arg GIT_COMMIT="$GIT_COMMIT"'
+		sh'docker  build -t jctg1/dgm:git_hash'
+		
             } 
 	
         }
@@ -19,7 +22,8 @@ pipeline {
         stage('push') {
             steps {
                 echo 'push....'
-		sh'docker push jctg1/dgm:$GIT_COMMIT'
+		sh'docker push jctg1/dgm:git_hash' 
+			
             }
         }
     }
