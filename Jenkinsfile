@@ -3,7 +3,8 @@
 pipeline {
     agent any
 
-   def git_hash = sh 'git rev-parse HEAD'
+	git_hash = 'git rev-parse HEAD'  
+	assert git_hash instanceof String
 
     stages {
         stage('Build') {
