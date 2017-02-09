@@ -11,8 +11,6 @@ pipeline {
 
            steps {
 	     checkout scm
-	     sh('git rev-parse HEAD > GIT_COMMIT')
-	     git_commit=readFile('GIT_COMMIT')
 	     sh'docker build -t jctg1/dgm:1.0'
             } 
 	
