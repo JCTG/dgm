@@ -9,7 +9,8 @@ pipeline {
 
            steps {
 	     sh "echo ${env.BRANCH_NAME}"
-	     sh'docker build -t jctg1/dgm:latest'
+	     sh 'echo ahuevo'
+	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
         }
