@@ -5,11 +5,10 @@ pipeline {
 
     stages {
    
-
         stage('Build') {
-	    sh "echo ${env.BRANCH_NAME}"
+
            steps {
-		sh "git rev-parse --short HEAD > .git/commit-id"                        
+	        sh "echo ${env.BRANCH_NAME}"
 		sh'docker build -t jctg1/dgm:$1.0'
             } 
 	
