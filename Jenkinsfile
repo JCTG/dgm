@@ -7,10 +7,10 @@ pipeline {
    
 
         stage('Build') {
-            steps {
+	    sh "echo ${env.BRANCH_NAME}"
+           steps {
 		sh "git rev-parse --short HEAD > .git/commit-id"                        
-		commit = readFile('.git/commit-id')
-		sh'docker build -t jctg1/dgm:$commit'
+		sh'docker build -t jctg1/dgm:$1.0'
             } 
 	
         }
@@ -22,7 +22,7 @@ pipeline {
         stage('push') {
             steps {
                 echo 'push....'
-		sh'docker push jctg1/dgm:latest' 
+		sh'docker push jctg1/dgm:1.0' 
 			
             }
         }
