@@ -3,15 +3,15 @@
 pipeline {
     agent any
 
-	git_hash = 'git rev-parse HEAD'  
-	assert git_hash instanceof String
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+		def git_hash = ""
+		git_hash = "git rev-parse HEAD"  
+ 
 		sh'docker  build -t jctg1/dgm:git_hash'
-		
             } 
 	
         }
@@ -23,7 +23,10 @@ pipeline {
         stage('push') {
             steps {
                 echo 'push....'
-		sh'docker push jctg1/dgm:git_hash' 
+		def git_hash1 = ""
+		git_hash1 = "git rev-parse HEAD"  
+
+		sh'docker push jctg1/dgm:git_hash1' 
 			
             }
         }
