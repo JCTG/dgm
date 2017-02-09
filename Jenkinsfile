@@ -3,18 +3,15 @@
 pipeline {
     agent any
 
-    node('docker-cloud') {
-	     checkout scm
-	     sh('git rev-parse HEAD > GIT_COMMIT')
-	     git_commit=readFile('GIT_COMMIT')
-    }
-
     stages {
    
         stage('Build') {
 
            steps {
-		sh'docker build -t jctg1/dgm:1.0'
+	     checkout scm
+	     sh('git rev-parse HEAD > GIT_COMMIT')
+	     git_commit=readFile('GIT_COMMIT')
+	     sh'docker build -t jctg1/dgm:1.0'
             } 
 	
         }
