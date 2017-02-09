@@ -2,8 +2,10 @@
 
 pipeline {
     agent any
-
+	
     stages {
+
+	checkout scm
    
         stage('Build') {
 
