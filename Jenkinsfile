@@ -5,12 +5,10 @@ pipeline {
 	
     stages {
 
-	checkout scm
-   
         stage('Build') {
 
            steps {
-	     checkout scm
+	     sh "echo ${env.BRANCH_NAME}"
 	     sh'docker build -t jctg1/dgm:1.0'
             } 
 	
