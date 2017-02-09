@@ -11,7 +11,7 @@ pipeline {
 	     sh "echo branch =  ${env.BRANCH_NAME}"
 	     sh "echo git_commit = ${env.GIT_COMMIT}"
 	     sh" echo COMMIT:    ${env.GIT_COMMIT} "
-	     sh 'echo ahuevo'
+	     sh "echo  git rev-parse HEAD = git rev-parse HEAD"
 	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
