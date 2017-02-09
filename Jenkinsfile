@@ -8,9 +8,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                h 'git rev-parse HEAD > commit'
-		def commit = readFile('commit').trim()
-		sh'docker build -t jctg1/dgm:commit'
+		def commit = "${git rev-parse HEAD}"
+		sh'docker build -t jctg1/dgm:$commit'
             } 
 	
         }
