@@ -8,7 +8,8 @@ pipeline {
 
         stage('Build') {
             steps {
-		def commit = "${git rev-parse HEAD}"
+		sh "git rev-parse --short HEAD > .git/commit-id"                        
+		commit = readFile('.git/commit-id')
 		sh'docker build -t jctg1/dgm:$commit'
             } 
 	
