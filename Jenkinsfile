@@ -9,7 +9,7 @@ pipeline {
 
            steps {
 	     sh "echo ${env.BRANCH_NAME}"
-	     sh'docker build -t jctg1/dgm:1.0'
+	     sh'docker build -t jctg1/dgm:latest'
             } 
 	
         }
@@ -21,7 +21,7 @@ pipeline {
         stage('push') {
             steps {
                 echo 'push....'
-		sh'docker push jctg1/dgm:1.0' 
+		sh'docker push jctg1/dgm:latest' 
 			
             }
         }
