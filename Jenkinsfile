@@ -8,8 +8,7 @@ pipeline {
         stage('Build') {
 
            steps {
-	        sh "echo ${env.BRANCH_NAME}"
-		sh'docker build -t jctg1/dgm:$1.0'
+		sh'docker build -t jctg1/dgm:"${env.BRANCH_NAME}"'
             } 
 	
         }
