@@ -9,9 +9,7 @@ pipeline {
 
            steps {
 	     sh "echo branch =  ${env.BRANCH_NAME}"
-	     sh "echo git_commit = ${env.GIT_COMMIT}"
-	     sh" echo COMMIT:    ${env.GIT_COMMIT} "
-	     sh "echo  git rev-parse HEAD = git rev-parse HEAD"
+	     print "BRANCH: ${env.BRANCH_NAME}, COMMIT: ${env.GIT_COMMIT}"
 	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
