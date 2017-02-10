@@ -9,8 +9,8 @@ pipeline {
 
            steps {
 	     sh "echo branch =  ${env.BRANCH_NAME}"
-	     print "BRANCH: ${env.BRANCH_NAME}, COMMIT: ${env.GIT_COMMIT}"
 	     sh'docker build -t jctg1/dgm:latest .'
+	     print "BRANCH: ${env.BRANCH_NAME}, COMMIT: ${env.GIT_COMMIT}"
             } 
 	
         }
