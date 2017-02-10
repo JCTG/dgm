@@ -9,7 +9,7 @@ pipeline {
 
            steps {
 	     sh "echo branch =  ${env.BRANCH_NAME}"
-	     sh "echo HASH   =  ${git log -1 dgm-pipeline}"
+	     sh "echo ${GIT_COMMIT}-${BUILD_NUMBER}"
 	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
