@@ -9,7 +9,7 @@ pipeline {
 
            steps {
 	     sh "echo branch =  ${env.BRANCH_NAME}"
-	     sh "echo ${GIT_COMMIT}-${BUILD_NUMBER}"
+	     sh "${git ls-remote https://github.com/JCTG/dgm HEAD}"
 	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
