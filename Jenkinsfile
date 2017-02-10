@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh'docker  build -t jctg1/dgm:2ebaf869c16a802128302de15b54b08f18b83215 .'
+		sh'docker  build -t jctg1/dgm .'
 		
             } 
 	
@@ -18,7 +18,7 @@ pipeline {
         stage('push') {
             steps {
                 echo 'push....'
-		sh'docker push jctg1/dgm:2ebaf869c16a802128302de15b54b08f18b83215' 
+		sh'docker push jctg1/dgm' 
 			
             }
         }
