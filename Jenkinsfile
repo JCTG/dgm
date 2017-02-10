@@ -8,9 +8,9 @@ pipeline {
         stage('Build') {
 
            steps {
-	     sh'docker build -t jctg1/dgm:latest .'
 	     sh "echo branch =  ${env.BRANCH_NAME}"
-	     sh" echo HASH =    ${git log -1 dgm-pipeline}"
+	     sh "echo HASH   =  ${git log -1 dgm-pipeline}"
+	     sh'docker build -t jctg1/dgm:latest .'
             } 
 	
         }
